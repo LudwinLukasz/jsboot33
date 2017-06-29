@@ -24,9 +24,7 @@ class Stopwatch {
 
 	start() {		
 		if (!this.running) {
-//			
 			this.running = true;
-			//var self = this;
 			this.watch = setInterval(() => this.step(), 10);
 		}
 	}
@@ -67,6 +65,6 @@ const stopwatch = new Stopwatch(
 document.querySelector('.stopwatch'));
 
 var stopButton = document.getElementById('stop');
-stopButton.addEventListener('click', stopwatch.stop());
+stopButton.addEventListener('click', function() {stopwatch.stop()});
 var startButton = document.getElementById('start');
-startButton.addEventListener('click', stopwatch.start());
+startButton.addEventListener('click', function() {stopwatch.start()});

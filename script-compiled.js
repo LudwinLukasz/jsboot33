@@ -39,9 +39,7 @@ var Stopwatch = function () {
 			var _this = this;
 
 			if (!this.running) {
-				//			
 				this.running = true;
-				//var self = this;
 				this.watch = setInterval(function () {
 					return _this.step();
 				}, 10);
@@ -89,6 +87,10 @@ function pad0(value) {
 var stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
 
 var stopButton = document.getElementById('stop');
-stopButton.addEventListener('click', stopwatch.stop());
+stopButton.addEventListener('click', function () {
+	stopwatch.stop();
+});
 var startButton = document.getElementById('start');
-startButton.addEventListener('click', stopwatch.start());
+startButton.addEventListener('click', function () {
+	stopwatch.start();
+});
